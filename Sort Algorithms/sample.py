@@ -1,17 +1,16 @@
-def multiply(M, n):
-    if n == 1:
-        return M
-    else:
-        return M + multiply(M, n - 1)
+arr = []
 
-while True:
-    M = int(input("Enter a number for M: "))
-
-    if M == -1:
-       break
-
-    n = int(input("Enter a number for n: "))
-
-    print("Multiplication of", M, "and", n, "is:", multiply(M, n))
+for i in range(5):
+    arr.append(int(input("Enter a number: ")))
     
+print("Entered numbers: ", arr)
 
+def BubbleSort(arr):
+    n = len(arr)
+    for i in range(n):
+        for j in range(0, n-i-1):
+            if(arr[j] > arr[j+1]):
+                arr[j], arr[j+1] = arr[j+1], arr[j]
+                
+BubbleSort(arr)
+print("Sorted array: ", arr)
